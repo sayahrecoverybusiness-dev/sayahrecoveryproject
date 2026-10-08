@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; SOS Request | Sayah Recovery</title>
+<meta name="description" content="Contact Sayah Recovery for 24/7 vehicle, van, truck and HGV recovery. Call now or send an SOS request with your location and vehicle details.">
+<meta name="theme-color" content="#070d1f">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+<link rel="canonical" href="https://sayahrecovery.co.uk/contact.html">
+</head>
+<body>
+
+<div class="top-strip">
+  <div class="container">
+    <span><span class="dot"></span> 24/7 Emergency Recovery — Available Now Across London &amp; the M11 Corridor</span>
+    <a href="tel:07729392939" class="top-strip-call" data-tel="primary">📞 <span data-bind="phone-primary">07729 392939</span></a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Sayah Recovery logo" data-bind-src="logo"></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="coverage.html">Coverage Area</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-ghost">Get a Quote</a>
+      <a href="tel:07729392939" class="btn btn-call" data-tel="primary">Call Now</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Kept outside <header> on purpose: header uses backdrop-filter, which
+     would otherwise become the containing block for this fixed-position
+     overlay and break full-screen coverage. -->
+<div class="mobile-menu">
+  <button class="close-menu" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="coverage.html">Coverage Area</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-cta">
+    <a href="tel:07729392939" class="btn btn-call btn-block" data-tel="primary">Call Now: <span data-bind="phone-primary">07729 392939</span></a>
+    <button type="button" class="btn btn-whatsapp btn-block whatsapp-location-btn"><span class="btn-label">WhatsApp — Share Location</span></button>
+    <a href="contact.html" class="btn btn-sos btn-block">SOS — Request Recovery</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    <div class="eyebrow reveal is-visible">We're Ready When You Are</div>
+    <h1 class="reveal is-visible" style="font-size:clamp(2rem,4vw,3rem);max-width:760px;">Contact Us or Send an SOS Request</h1>
+    <p class="reveal is-visible" style="color:var(--chrome-400);max-width:640px;font-size:1.05rem;">For emergencies, calling is always fastest. For quotes, fleet accounts or general enquiries, use the form below.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container split" style="align-items:flex-start;">
+
+    <div class="reveal">
+      <div class="form-panel">
+        <div class="form-success" id="form-success">✓ Thanks — your request has been received. We'll be in touch shortly. For urgent recovery, please call us directly.</div>
+        <div class="form-error" id="form-error" hidden>Sorry, something went wrong sending your request. Please try again, or call us directly for urgent help.</div>
+        <form id="contact-form" novalidate action="https://formspree.io/f/mlgqavar" method="POST">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Smith">
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="07xxx xxxxxx">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="service">Service Needed *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option>Car, Van &amp; Truck Breakdown &amp; Recovery</option>
+                <option>Off-Road Recovery</option>
+                <option>Accident Management</option>
+                <option>Commercial / Fleet Support</option>
+                <option>Bus, Coach &amp; Low Loader Recovery</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="location">Your Location *</label>
+            <input type="text" id="location" name="location" required placeholder="Postcode, street name, or nearest landmark">
+          </div>
+          <div class="field">
+            <label for="message">Additional Details</label>
+            <textarea id="message" name="message" placeholder="Vehicle make/model, what happened, any access issues..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-call btn-block btn-lg">Send Request</button>
+          <p class="form-note">* This form is for quotes and general enquiries. For an active breakdown or emergency, please <a href="tel:07729392939" class="text-blue" data-tel="primary">call us directly</a> for the fastest response.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="eyebrow">Direct Contact</div>
+      <h2>Talk to Us Now</h2>
+
+      <div class="contact-info-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div>
+          <h4>24/7 Emergency Line</h4>
+          <p><a href="tel:07729392939" data-tel="primary"><span data-bind="phone-primary">07729 392939</span></a></p>
+        </div>
+      </div>
+      <div class="contact-info-card whatsapp">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#34d17a" stroke-width="0"><path fill="#34d17a" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#34d17a" d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.462 3.482 1.34 4.995L2 22l5.145-1.35A9.958 9.958 0 0 0 12.001 22c5.522 0 10-4.477 10-10s-4.478-10-10-10zm0 18.185a8.156 8.156 0 0 1-4.156-1.14l-.298-.176-3.096.812.827-3.02-.194-.31A8.19 8.19 0 0 1 3.813 12c0-4.518 3.678-8.185 8.188-8.185 4.51 0 8.188 3.667 8.188 8.185 0 4.518-3.677 8.185-8.188 8.185z"/></svg></div>
+        <div>
+          <h4>Share Your Exact Location via WhatsApp</h4>
+          <p>One tap sends us your live GPS location on WhatsApp — the fastest way for us to find you.</p>
+          <button type="button" class="btn btn-whatsapp whatsapp-location-btn"><span class="btn-label">Share My Location via WhatsApp</span></button>
+        </div>
+      </div>
+      <div class="contact-info-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <div>
+          <h4>Office Line</h4>
+          <p><a href="tel:01992842494" data-tel="secondary"><span data-bind="phone-secondary">01992 842494</span></a></p>
+        </div>
+      </div>
+      <div class="contact-info-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg></div>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:sayahrecovery@gmail.com" data-email-link><span data-bind="email">sayahrecovery@gmail.com</span></a></p>
+        </div>
+      </div>
+      <div class="contact-info-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h4>Coverage Area</h4>
+          <p>North London &amp; the M11 Corridor (Essex &amp; Hertfordshire) — nationwide via partner network. <a href="coverage.html">View coverage map →</a></p>
+        </div>
+      </div>
+      <div class="contact-info-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div>
+          <h4>Availability</h4>
+          <p data-bind="hours">Open 24 hours a day, 7 days a week.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Sayah Recovery" data-bind-src="logo">
+        <p>24/7 professional vehicle, van, truck, HGV, bus and coach recovery across North London and the M11 corridor, with nationwide coverage through our trusted partner network.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="coverage.html">Coverage Area</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Car, Van &amp; Truck Recovery</a></li>
+          <li><a href="services.html">Off-Road Recovery</a></li>
+          <li><a href="services.html">Accident Management</a></li>
+          <li><a href="services.html">Bus, Coach &amp; Low Loader</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:01992842494" data-tel="secondary"><span data-bind="phone-secondary">01992 842494</span></a></li>
+          <li><a href="tel:07729392939" data-tel="primary"><span data-bind="phone-primary">07729 392939</span></a></li>
+          <li><a href="mailto:sayahrecovery@gmail.com" data-email-link><span data-bind="email">sayahrecovery@gmail.com</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Sayah Recovery. All rights reserved.</span>
+      <span>24hr Emergency Recovery Specialists — London &amp; M11 Corridor</span>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-actions">
+  <button type="button" class="floating-btn floating-whatsapp whatsapp-location-btn" aria-label="Share your exact location via WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.77.462 3.482 1.34 4.995L2 22l5.145-1.35A9.958 9.958 0 0 0 12.001 22c5.522 0 10-4.477 10-10s-4.478-10-10-10zm0 18.185a8.156 8.156 0 0 1-4.156-1.14l-.298-.176-3.096.812.827-3.02-.194-.31A8.19 8.19 0 0 1 3.813 12c0-4.518 3.678-8.185 8.188-8.185 4.51 0 8.188 3.667 8.188 8.185 0 4.518-3.677 8.185-8.188 8.185z"/></svg>
+    <span class="btn-label">Share Location</span>
+  </button>
+  <a href="tel:07729392939" class="floating-btn floating-sos floating-sos-1" data-tel="primary" data-aria-template="Call emergency line: {phone}" aria-label="Call emergency line: 07729 392939"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="btn-label">SOS 1 · <span data-bind="phone-primary">07729 392939</span></span></a>
+  <a href="tel:01992842494" class="floating-btn floating-sos floating-sos-2" data-tel="secondary" data-aria-template="Call office line: {phone}" aria-label="Call office line: 01992 842494"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="btn-label">SOS 2 · <span data-bind="phone-secondary">01992 842494</span></span></a>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/site-content.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

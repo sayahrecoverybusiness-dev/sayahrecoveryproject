@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Admin — Sayah Recovery</title>
+<!-- Kept out of search results and off the public nav on purpose — see README.md -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="admin-wrap admin-wrap-wide">
+  <div class="admin-header">
+    <img src="assets/logo.png" alt="Sayah Recovery" class="admin-logo">
+    <span class="admin-title">Admin Panel</span>
+  </div>
+
+  <!-- Login screen -->
+  <div class="admin-card" id="login-card">
+    <h1>Sign In</h1>
+    <p class="admin-sub">Staff only — sign in to manage the site.</p>
+    <div class="form-error" id="login-error" hidden></div>
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" required autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-call btn-block">Sign In</button>
+    </form>
+  </div>
+
+  <!-- Dashboard (hidden until signed in) -->
+  <div id="dashboard" hidden>
+    <div class="admin-toolbar">
+      <span id="admin-user-email"></span>
+      <button type="button" class="btn btn-ghost" id="sign-out-btn">Sign Out</button>
+    </div>
+
+    <!-- Top-level section switcher -->
+    <div class="admin-tabs admin-section-tabs">
+      <button type="button" class="admin-tab active" data-section="reviews">⭐ Reviews</button>
+      <button type="button" class="admin-tab" data-section="content">🛠️ Site Content</button>
+    </div>
+
+    <!-- ======= REVIEWS SECTION ======= -->
+    <div id="reviews-section">
+      <div class="admin-tabs">
+        <button type="button" class="admin-tab active" data-tab="pending">Pending <span id="pending-count" class="tab-badge"></span></button>
+        <button type="button" class="admin-tab" data-tab="approved">Published</button>
+      </div>
+
+      <div class="admin-panel-section" id="pending-panel">
+        <div id="pending-list" class="admin-review-list"></div>
+      </div>
+      <div class="admin-panel-section" id="approved-panel" hidden>
+        <div id="approved-list" class="admin-review-list"></div>
+      </div>
+    </div>
+
+    <!-- ======= SITE CONTENT SECTION ======= -->
+    <div id="content-section" hidden>
+      <div class="admin-tabs">
+        <button type="button" class="admin-tab active" data-content-tab="contact">Contact Info</button>
+        <button type="button" class="admin-tab" data-content-tab="services">Services</button>
+        <button type="button" class="admin-tab" data-content-tab="coverage">Coverage Areas</button>
+        <button type="button" class="admin-tab" data-content-tab="images">Images</button>
+      </div>
+
+      <!-- Contact info -->
+      <div class="admin-panel-section" id="content-contact-panel">
+        <div class="content-form">
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-phone-primary">Emergency phone (primary — used for Call Now / SOS)</label>
+              <input type="text" id="cf-phone-primary" placeholder="07729 392939">
+            </div>
+            <div class="field">
+              <label for="cf-phone-secondary">Office phone (secondary)</label>
+              <input type="text" id="cf-phone-secondary" placeholder="01992 842494">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-whatsapp">WhatsApp number (international format, digits only, no + or spaces)</label>
+              <input type="text" id="cf-whatsapp" placeholder="447729392939">
+            </div>
+            <div class="field">
+              <label for="cf-email">Email address</label>
+              <input type="email" id="cf-email" placeholder="sayahrecovery@gmail.com">
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-hours">Opening hours text</label>
+            <input type="text" id="cf-hours" placeholder="Open 24 hours a day, 7 days a week.">
+          </div>
+          <div class="editor-actions">
+            <button type="button" class="btn btn-call" id="save-contact-btn">Save Contact Info</button>
+            <span class="save-msg" id="save-contact-msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="admin-panel-section" id="content-services-panel" hidden>
+        <div id="services-editor-list" class="content-card-list"></div>
+        <div class="editor-actions">
+          <button type="button" class="btn btn-ghost" id="add-service-btn">+ Add Service</button>
+          <button type="button" class="btn btn-call" id="save-services-btn">Save Services</button>
+          <span class="save-msg" id="save-services-msg"></span>
+        </div>
+      </div>
+
+      <!-- Coverage areas -->
+      <div class="admin-panel-section" id="content-coverage-panel" hidden>
+        <div id="coverage-editor-list" class="content-card-list"></div>
+        <div class="editor-actions">
+          <button type="button" class="btn btn-ghost" id="add-coverage-btn">+ Add Coverage Area</button>
+          <button type="button" class="btn btn-call" id="save-coverage-btn">Save Coverage Areas</button>
+          <span class="save-msg" id="save-coverage-msg"></span>
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div class="admin-panel-section" id="content-images-panel" hidden>
+        <div class="img-upload-row">
+          <div class="img-preview-block">
+            <span>Logo</span>
+            <img id="logo-preview" class="img-preview" alt="Current logo" src="assets/logo.png">
+            <input type="file" id="logo-file" accept="image/*">
+            <div class="editor-actions">
+              <button type="button" class="btn btn-ghost" id="logo-reset-btn">Reset to default</button>
+              <span class="save-msg" id="logo-msg"></span>
+            </div>
+          </div>
+          <div class="img-preview-block">
+            <span>Homepage hero photo</span>
+            <img id="hero-preview" class="img-preview" alt="Current hero photo" src="assets/truck-hero.jpg">
+            <input type="file" id="hero-file" accept="image/*">
+            <div class="editor-actions">
+              <button type="button" class="btn btn-ghost" id="hero-reset-btn">Reset to default</button>
+              <span class="save-msg" id="hero-msg"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-storage-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/site-content.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/admin-content.js"></script>
+</body>
+</html>
